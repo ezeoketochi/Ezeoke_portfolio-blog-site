@@ -15,7 +15,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootRoute />,
     errorElement : <Error/>,
-
     children: [
       { path: "/", element: <Posts /> },
       { path: "/categories", element: <Categories /> },
@@ -24,7 +23,7 @@ const router = createBrowserRouter([
       { path: "/newpost", element: <NewPost /> },
     ],
   },
-]);
+], {basename: "/Ezeoke_portfolio-blog-site/"});
 
 function App() {
 
