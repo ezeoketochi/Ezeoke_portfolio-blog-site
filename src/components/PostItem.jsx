@@ -3,28 +3,27 @@ import { PostContext } from "../contexts/PostContext";
 import { Link } from "react-router-dom";
 
 
-export default function PostItem({imgsrc,description,date,title,id, deleteSelectedPost , ...props}) {
+export default function PostItem({imgsrc,description,date,title,id, deleteSelectedPost ,category, ...props}) {
  
 
 
     const {posts} = useContext(PostContext); 
 
-    // console.log(posts);
-
 
   return (
     <>
       <div {...props} className=" flex flex-col h-full w-[370px] gap-3 p-2 m-3">
-        <div className=" h-[300px] w-[350px] rounded-md">
+        <div className="h-[300px] w-[350px] rounded-md ">
           <img
-            className="h-full w-full object-cover rounded-md "
+            className="h-full w-full object-cover rounded-md hover:scale-105 duration-150"
             src={imgsrc}
             alt="img"
           />
         </div>
-        <div>
+        <div className="flex justify-between">
           
-          <h1 className="text-sm text-gray-500">{date}</h1>{" "}
+          <h1 className="text-sm text-gray-500">{date}</h1>
+          <h1 className="font-bold text-stone-500">{category}</h1>
         </div>
         <div>
           <div>

@@ -22,6 +22,7 @@ export default function PostItemsSection() {
                 date={post.createdAt}
                 title={post.title}
                 id={post.id}
+                category={post.category}
                 deleteSelectedPost={() => ctx.deleteSelectedPost(post.id)}
               />
             );

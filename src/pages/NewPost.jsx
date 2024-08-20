@@ -16,19 +16,16 @@ export default function NewPost() {
   function handleSubmitNewPost(event) {
     event.preventDefault();
 
-
     const fd = new FormData(event.target);
 
     const data = Object.fromEntries(fd.entries());
 
-    ctx.addNewPost({data})
-
+    ctx.addNewPost({ data });
 
     event.target.reset();
     setImage(null);
 
-    navigate("/")
-
+    navigate("/");
   }
 
   function handleImageChange(e) {
@@ -45,7 +42,13 @@ export default function NewPost() {
         <div className="w-4/5 ">
           <h1 className="text-lg font-bold mb-2">Image</h1>
           <div className="h-[400px] w-100% ">
-            <input type="file" onChange={handleImageChange} name="image" required></input>
+            <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              name="image"
+              required
+            ></input>
             <img
               className="h-full w-full object-contain rounded-md"
               src={image}
@@ -66,7 +69,7 @@ export default function NewPost() {
 
         <div className="w-4/5 ">
           <h1 className="text-lg font-bold mb-2">Category</h1>
-          <select required name="category" className="w-full p-2 outline-none" >
+          <select required name="category" className="w-full p-2 outline-none">
             <option value="">--Please choose an option--</option>
 
             {categories.map((cat) => {

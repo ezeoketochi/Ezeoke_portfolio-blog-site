@@ -14,6 +14,12 @@ export default function EditPost() {
   let posts = ctx.postDetailState.posts;
   let categories = ctx.postDetailState.categories;
 
+  let filteredPosts = posts.filter((post) => {
+    return post.id == params.id;
+  });
+
+  let selectedPost = filteredPosts[0];
+
   function handleImageChange(e) {
     setImage(URL.createObjectURL(e.target.files[0]));
   }
@@ -25,23 +31,15 @@ export default function EditPost() {
 
     const data = Object.fromEntries(fd.entries());
 
-    const selected_id = params.id ;
+    const selected_id = params.id;
 
- 
-
-    ctx.editSelectedPost({data , selected_id } );
+    ctx.editSelectedPost({ data, selected_id });
 
     event.target.reset();
     setImage(null);
 
     navigate("/");
   }
-
-  let filteredPosts = posts.filter((post) => {
-    return post.id == params.id;
-  });
-
-  let selectedPost = filteredPosts[0];
 
   return (
     <form onSubmit={handleEditSubmit}>
@@ -59,7 +57,8 @@ export default function EditPost() {
               type="file"
               onChange={handleImageChange}
               name="image"
-            ></input>
+              accept="image/*"
+              ></input>
 
             <img
               className="h-full w-full object-contain rounded-md"

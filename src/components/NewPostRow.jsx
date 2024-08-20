@@ -9,7 +9,7 @@ export default function NewPostRow() {
           <h1 className="text-white p-2">New Post</h1>
         </Link>
 
-        <Link className="hover:underline decoration-slate-500 hover:decoration-2">
+        <Link to={"/about"} className="hover:underline decoration-slate-500 hover:decoration-2">
           <h1>Learn More...</h1>
         </Link>
       </div>
