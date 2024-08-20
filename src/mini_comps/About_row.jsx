@@ -7,8 +7,8 @@ export default function AboutRow({ title, detail, isFile, link, siteName }) {
         <div className="h-[1px] bg-slate-300 w-full"></div>
         {!isFile ? (
           <div className="flex flex-col md:flex-row  justify-between mb-3">
-            <h1 className="uppercase font-bold ">{title}</h1>
-            <h1 className="w-4/6">{detail}</h1>
+            <h1 className="uppercase font-bold text-center ">{title}</h1>
+            <h1 className=" text-center md:w-4/6 md:text-start">{detail}</h1>
           </div>
         ) : (
           <Link to={"/resume/Ezeoke_Tochukwu_CV.png"} target="_blank" download>

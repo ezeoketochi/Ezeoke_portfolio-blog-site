@@ -34,12 +34,10 @@ export default function NewPost() {
 
   return (
     <form onSubmit={handleSubmitNewPost}>
-      <div className="h-[85vh] flex flex-col justify-around gap-3 items-center p-3 ">
-        <div className="w-4/5">
-          <h1 className="text-4xl font-extrabold">Post Title : {}</h1>
-        </div>
+      <div className=" flex flex-col justify-around gap-3 items-center p-3 ">
+       
 
-        <div className="w-4/5 ">
+        <div className="w-4/5 mt-3 ">
           <h1 className="text-lg font-bold mb-2">Image</h1>
           <div className="h-[400px] w-100% ">
             <input
