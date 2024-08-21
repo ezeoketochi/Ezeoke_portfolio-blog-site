@@ -3,14 +3,7 @@ import { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 export default function MainNavigation() {
-  // const [isActive, setIsActive] = useState(false);
 
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
-  //   });
-  // });
 
   let [showNav, setShowNav] = useState(false);
 
@@ -18,7 +11,6 @@ export default function MainNavigation() {
 
     if (action === "open"){
         setShowNav((i) => true);
-        // navRef.current.close
 
     } else if (action === "close"){
         setShowNav( (i) => false);
@@ -46,7 +38,7 @@ export default function MainNavigation() {
           <ul className="flex flex-col gap-3 md:flex-row md:gap-10 p-6 justify-center ">
             <li>
               <NavLink
-                to={"/"}
+                to={"/posts"}
                 className={({ isActive, isPending }) =>
                   isActive
                     ? "bg-gray-900 py-2 text-white rounded px-4"
@@ -74,7 +66,7 @@ export default function MainNavigation() {
             </li>
             <li>
               <NavLink
-                to={"/about"}
+                to={"/"}
                 className={({ isActive, isPending }) =>
                   isActive
                     ? "bg-gray-900 py-2 text-white rounded px-4"
