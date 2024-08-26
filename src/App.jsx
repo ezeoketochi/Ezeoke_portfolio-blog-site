@@ -8,13 +8,13 @@ import { useState } from "react";
 import { postDetails } from "./data/db";
 import EditPost from "./pages/EditPost";
 import NewPost from "./pages/NewPost";
-import Error from "./pages/Error";
+import ErrorPage from "./pages/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <RootRoute />,
-    errorElement : <Error/>,
+    errorElement : <ErrorPage/>,
     children: [
       { path: "/posts", element: <Posts /> },
       { path: "/categories", element: <Categories /> },
